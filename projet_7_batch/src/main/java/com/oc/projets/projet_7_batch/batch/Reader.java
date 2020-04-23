@@ -34,8 +34,13 @@ public class Reader implements ItemReader<Emprunt> {
 	@Override
 	public Emprunt read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
 		// TODO Auto-generated method stub
-		 Flux<Emprunt> flux = this.webClient.get().uri("http://localhost:8080/api/emprunt/batch")
-				 			  .retrieve().bodyToFlux(Emprunt.class);
+		//En local
+//		 Flux<Emprunt> flux = this.webClient.get().uri("http://localhost:8080/api/emprunt/batch")
+//				 			  .retrieve().bodyToFlux(Emprunt.class);
+		
+		//En déploiement
+		 Flux<Emprunt> flux = this.webClient.get().uri("http://localhost:8080/projet_7-0.0.1-SNAPSHOT/api/emprunt/batch")
+	 			  .retrieve().bodyToFlux(Emprunt.class);
 		 this.emprunts = flux.collectList().block();
 
 		if(count < this.emprunts.size()) {

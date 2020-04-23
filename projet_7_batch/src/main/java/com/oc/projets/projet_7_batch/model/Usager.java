@@ -10,8 +10,6 @@ private Long id;
 	
 	private String email;
 	
-	private String password;
-	
 	private String role = "USER";
 
 	public Usager() {
@@ -19,10 +17,9 @@ private Long id;
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usager(String email, String password) {
+	public Usager(String email) {
 		// TODO Auto-generated constructor stub
 		this.email = email;
-		this.password = password;
 	}
 
 	public Long getId() {
@@ -55,14 +52,6 @@ private Long id;
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	public String getRole() {

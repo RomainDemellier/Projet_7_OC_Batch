@@ -52,7 +52,7 @@ public class BatchConfig {
 	@Bean Step orderStep1() {
 		return stepBuilderFactory.get("orderStep1").<Emprunt, SimpleMailMessage>chunk(8)
 				.reader(new Reader()).processor(new Processor())
-				.writer(new Writer()).build();
+				.writer(new Writer(this.javaMailSender)).build();
 	}
 	
 	@Bean
@@ -68,6 +68,7 @@ public class BatchConfig {
 			@Override
 			public void afterJob(JobExecution jobExecution) {
 				// TODO Auto-generated method stub
+				System.out.println("BATCH DONE.");
 			}
 		};
 	}
