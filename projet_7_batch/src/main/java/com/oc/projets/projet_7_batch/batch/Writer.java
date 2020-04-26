@@ -10,7 +10,6 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 public class Writer implements ItemWriter<SimpleMailMessage> {
 
 	private JavaMailSender javaMailSender;
-	//private EnvoiMail envoiMail;
 	
 	public Writer(JavaMailSender javaMailSender) {
 		// TODO Auto-generated constructor stub
@@ -21,7 +20,6 @@ public class Writer implements ItemWriter<SimpleMailMessage> {
 	public void write(List<? extends SimpleMailMessage> items) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("Dans write");
-//		SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
 		JavaMailSender javaMailSender = new JavaMailSenderImpl();
 		for(SimpleMailMessage msg: items) {
 			if(msg != null) {

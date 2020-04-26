@@ -36,9 +36,6 @@ public class BatchConfig {
 	@Autowired
 	public JobLauncher jobLauncher;
 	
-//	@Autowired
-//	public WebClient webClient;
-	
 	@Autowired
 	public JavaMailSender javaMailSender;
 	
