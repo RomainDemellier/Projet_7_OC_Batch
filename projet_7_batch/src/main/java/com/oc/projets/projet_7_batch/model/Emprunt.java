@@ -6,7 +6,7 @@ public class Emprunt {
 
 	private Long id;
 	
-	private Livre livre;
+	private Exemplaire exemplaire;
 	
 	private Usager usager;
 	
@@ -31,12 +31,12 @@ public class Emprunt {
 		this.id = id;
 	}
 
-	public Livre getLivre() {
-		return livre;
+	public Exemplaire getExemplaire() {
+		return exemplaire;
 	}
 
-	public void setLivre(Livre livre) {
-		this.livre = livre;
+	public void setExemplaire(Exemplaire exemplaire) {
+		this.exemplaire = exemplaire;
 	}
 
 	public Usager getUsager() {
@@ -81,7 +81,7 @@ public class Emprunt {
 
 	@Override
 	public String toString() {
-		return "Emprunt [id=" + id + ", livre=" + livre + ", usager=" + usager + ", dateEmprunt=" + dateEmprunt
+		return "Emprunt [id=" + id + ", exemplaire=" + exemplaire + ", usager=" + usager + ", dateEmprunt=" + dateEmprunt
 				+ ", dateRetour=" + dateRetour + ", prolonge=" + prolonge + ", actif=" + actif + "]";
 	}
 }

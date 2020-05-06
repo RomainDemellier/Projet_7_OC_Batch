@@ -41,11 +41,13 @@ public class Reader implements ItemReader<Emprunt> {
 		//En déploiement
 		 Flux<Emprunt> flux = this.webClient.get().uri("http://localhost:8080/projet_7-0.0.1-SNAPSHOT/api/emprunt/batch")
 	 			  .retrieve().bodyToFlux(Emprunt.class);
+		 
+		 
 		 this.emprunts = flux.collectList().block();
 
 		if(count < this.emprunts.size()) {
 			System.out.println("Dans le BATCH");
-			System.out.println("Reader titre : " + this.emprunts.get(count).getLivre().getTitre());
+			System.out.println("Reader titre : " + this.emprunts.get(count).getExemplaire().getLivre().getTitre());
 			return this.emprunts.get(count++);
 		} else {
 			count = 0;
